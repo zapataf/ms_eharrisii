@@ -1,8 +1,8 @@
 # Introduction #
 
-This repository contains the textm code, and data presented in this manuscript:
+This repository contains the text, code, and data presented in this manuscript:
 
-  Zapata F, Villarroel D. A new species of Escallonia (Escalloniaceae) from the inter-Andean tropical dry forests of Bolivia
+    Zapata F, Villarroel D. A new species of Escallonia (Escalloniaceae) from the inter-Andean tropical dry forests of Bolivia
   
 The files included in this repository include:
 
