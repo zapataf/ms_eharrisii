@@ -9,11 +9,11 @@
 #
 
 -------------------------
-#####################
-#					#
-#	PRELIMINARIES 	#
-#					#
-#####################
+#########################
+#			#
+#    PRELIMINARIES	#
+#			#
+#########################
 
 library(ggplot2)
 library(gridExtra)
@@ -43,11 +43,11 @@ specimens = read.table("~/Dropbox/repo/e_harrisii_2017/specimens.csv",
 
 
 -------------------------
-#########################
-#						#
-#	DATA ORGANIZATION 	#
-#						#
-#########################
+###########################
+#			  #
+#    DATA ORGANIZATION    #
+#			  #
+###########################
 
 data = arrange(data, species)
 species_names = as.character(unique(data$species))
@@ -109,11 +109,11 @@ map2 = get_map( location = eh_bbox,
 
 
 -------------------------
-#####################
-#					#
-#	DATA ANALYSES 	#
-#					#
-#####################
+#######################
+#	              #
+#    DATA ANALYSES    #
+#		      #
+#######################
 
 # These analyses use the scripts to detect discontinuities in morphology presented in:
 
@@ -307,9 +307,9 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
 
 -------------------------
 #################
-#				#
-#	FIGURES 	#
-#				#
+#		#
+#    FIGURES    #
+#		#
 #################
 
 =====
