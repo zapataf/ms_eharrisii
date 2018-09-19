@@ -30,16 +30,16 @@ library(rgeos)
 library(legendMap)
 
 
-data = read.table("~/Dropbox/repo/e_harrisii_2017/data.csv", 
-					sep =",", 
-					header = TRUE)
+data = read.table("data.csv", 
+		   sep =",", 
+		   header = TRUE)
 
-specimens = read.table("~/Dropbox/repo/e_harrisii_2017/specimens.csv", 
-						sep = ",", 
-						header = TRUE, 
-						quote = "", 
-						fill = TRUE, 
-						row.names = NULL)
+specimens = read.table("specimens.csv", 
+			sep = ",", 
+			header = TRUE, 
+			quote = "", 
+			fill = TRUE, 
+			row.names = NULL)
 
 
 -------------------------
