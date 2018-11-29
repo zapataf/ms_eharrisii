@@ -10,9 +10,9 @@
 
 -------------------------
 #########################
-#			#
-#    PRELIMINARIES	#
-#			#
+#						#
+#    PRELIMINARIES		#
+#						#
 #########################
 
 library(ggplot2)
@@ -44,9 +44,9 @@ specimens = read.table("specimens.csv",
 
 -------------------------
 ###########################
-#			  #
+#			  			  #
 #    DATA ORGANIZATION    #
-#			  #
+#			  			  #
 ###########################
 
 data = arrange(data, species)
@@ -110,9 +110,9 @@ map2 = get_map( location = eh_bbox,
 
 -------------------------
 #######################
-#	              #
+#	              	  #
 #    DATA ANALYSES    #
-#		      #
+#		      		  #
 #######################
 
 # These analyses use the scripts to detect discontinuities in morphology presented in:
@@ -307,20 +307,21 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
 
 -------------------------
 #################
-#		#
+#				#
 #    FIGURES    #
-#		#
+#				#
 #################
 
 =====
 ## FIGURE 1
 
-do.call(grid.arrange, leaf_plots)
+args_leaf_plots = c(leaf_plots, list(nrow = 7, ncol = 6, left = "Lamina Width (mm)", bottom = "Lamina Length (mm)"))
+do.call(grid.arrange, args_leaf_plots)
 
 =====
 ## FIGURE 2
-
-do.call(grid.arrange, proportion_plots)
+args_proportion_plots = c(proportion_plots, list(nrow = 7, ncol = 6, left = "Proportion within tolerance region", bottom = "Ridgeline manifold"))
+do.call(grid.arrange, args_proportion_plots)
 
 =====
 ## FIGURE 3
@@ -336,7 +337,8 @@ ggplot(data, aes( x = species, y = NFLOWERS )) +
 =====
 ## FIGURE 4
 
-do.call(grid.arrange, flowerprop_plots)
+args_flowerprop_plots = c(flowerprop_plots, list(nrow = 7, ncol = 6, left = "Number of flowers", bottom = "Species"))
+do.call(grid.arrange, args_flowerprop_plots)
 
 =====
 ## FIGURE 5
@@ -366,7 +368,7 @@ ggplot() +
 
 elevp =
 	ggplot( data, aes( species, elev, fill = species )) +
-    geom_boxplot( aes( species, elev ), subset( data, species %in% out), na.rm = T ) +
+    geom_boxplot( aes( species, elev ), subset( data, species %in% out), alpha = 0.8, na.rm = T ) +
     theme( axis.text.x  = element_blank(),
     	   axis.ticks.x = element_blank(), 	 
     	   axis.title.y = element_text(size=10)) +
