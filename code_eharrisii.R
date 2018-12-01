@@ -204,19 +204,19 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
         #Plots
         mixture_plots[[i]] <- ggplot() +
                                 geom_line(aes(alfa, pdf), temp_mixture) +
-                                labs(title=paste(i)) +
-                                theme(axis.text = element_text(size=5), 
+                                labs( title = paste(tail(sort(subdata$panel), n = 1))) +
+                                theme(axis.text = element_text(size = 5), 
                                 	  axis.title = element_blank(), 
                                 	  legend.position = "none", 
                                 	  plot.margin = unit(c(2,1,1,1), "mm"), 
                                 	  title = element_text( size = 8 ))
 
-        manifold_plots[[i]] <- ggplot(data=subdata, aes(LAMLEN, LAMWID, color=SP, shape=factor(SP))) +
+        manifold_plots[[i]] <- ggplot(data=subdata, aes(LAMLEN, LAMWID, color = SP, shape = factor(SP))) +
                                 geom_point() +
                                 geom_point(data = m1, aes(x = X1, y = X2), color = "red", shape = 19, size = 2) +
                                 geom_point(data = m2, aes(x = X1, y = X2), color = "red", shape = 19, size = 2) +
                                 geom_point(data = xy, aes(x,y), color = "red", shape = 19, size = 2) +
-                                labs(x=NULL, y=NULL, title=paste(i)) +
+                                labs(x = NULL, y = NULL, title = paste(i)) +
                                 theme(axis.text.x = element_text(size = 5), 
                                 	  axis.text.y = element_text(size = 5), 
                                 	  legend.position = "none", 
@@ -225,19 +225,19 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
 
         proportion_plots[[i]] <- ggplot() +
                                     ylim(c(0, 1)) +
-                                    geom_line(aes(alfa_A, beta_A), temp_propA, color="#33CCFF" ) +
+                                    geom_line(aes(alfa_A, beta_A), temp_propA, color = "#33CCFF" ) +
                                     geom_line(aes(alfa_B, beta_B), temp_propB, color = "000033") +
-                                    geom_hline(aes(yintercept=freq_cutoff), linetype="dashed") +
-                                    labs(title=paste(i)) +
+                                    geom_hline(aes(yintercept=freq_cutoff), linetype = "dashed") +
+                                    labs(title=paste(tail(sort(subdata$panel), n=1))) +
                                     theme(axis.text = element_text(size = 5), 
                                     	  axis.title = element_blank(), 
                                     	  legend.position = "none", 
                                     	  plot.margin = unit(c(2,1,1,1), "mm"), 
                                     	  title = element_text(size = 8))
 
-        leaf_plots[[i]] <- ggplot(data=subdata, aes(LAMLEN, LAMWID, color=SP, shape=factor(SP))) +
+        leaf_plots[[i]] <- ggplot(data=subdata, aes(LAMLEN, LAMWID, color = SP, shape = factor(SP))) +
                             geom_point() +
-                            labs(x=NULL, y=NULL, title=paste(i)) +
+                            labs(x = NULL, y = NULL, title = paste(tail(sort(subdata$panel), n = 1))) +
                             theme(axis.text.x = element_text(size = 5), 
                             	  axis.text.y = element_text(size = 5), 
                             	  legend.position = "none", 
@@ -287,9 +287,10 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
 		x_a <- (mean_a + k1*(var(a)^0.5))
 		x_b <- (mean_b - k2*(var(b)^0.5))
 
-		flowerprop_plots[[i]] = ggplot(subdata, aes(x=factor(SP), y=NFLOWERS, fill=SP)) +
+		flowerprop_plots[[i]] = ggplot(subdata, aes(x = factor(SP), y = NFLOWERS, fill = SP)) +
 									geom_boxplot() +
-									guides(fill=TRUE) + labs(title=paste(i)) +
+									guides(fill = TRUE) + 
+									labs(title = paste(tail(sort(subdata$panel), n = 1))) +
 									theme(axis.text.y = element_text(size=5), 
 										  axis.title.y =element_blank(), 
 										  axis.title.x =element_blank(), 
@@ -315,13 +316,22 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
 =====
 ## FIGURE 1
 
-args_leaf_plots = c(leaf_plots, list(nrow = 7, ncol = 6, left = "Lamina Width (mm)", bottom = "Lamina Length (mm)"))
+args_leaf_plots = c(leaf_plots, 
+					list(nrow = 7, 
+						ncol = 6, 
+						left = "Lamina Width (mm)", 
+						bottom = "Lamina Length (mm)"))
 do.call(grid.arrange, args_leaf_plots)
 
 =====
 ## FIGURE 2
-args_proportion_plots = c(proportion_plots, list(nrow = 7, ncol = 6, left = "Proportion within tolerance region", bottom = "Ridgeline manifold"))
+args_proportion_plots = c(proportion_plots, 
+							list(nrow = 7, 
+								ncol = 6, 
+								left = "Proportion within tolerance region", 
+								bottom = "Ridgeline manifold"))
 do.call(grid.arrange, args_proportion_plots)
+
 
 =====
 ## FIGURE 3
@@ -337,7 +347,11 @@ ggplot(data, aes( x = species, y = NFLOWERS )) +
 =====
 ## FIGURE 4
 
-args_flowerprop_plots = c(flowerprop_plots, list(nrow = 7, ncol = 6, left = "Number of flowers", bottom = "Species"))
+args_flowerprop_plots = c(flowerprop_plots, 
+							list(nrow = 7, 
+							ncol = 6, 
+							left = "Number of flowers", 
+							bottom = "Species"))
 do.call(grid.arrange, args_flowerprop_plots)
 
 =====
@@ -349,21 +363,28 @@ ggplot() +
 				  fill = NA, color = "grey30" ) +
 	geom_point( aes( long, lat), 
 				subset( data, !(species %in% out), size = 10, alpha = 0.8, na.rm = T ), col="grey65", size = 1.5 ) +
-	geom_point( aes( long, lat, color = species), 
-				subset( data, species %in% out, size = 10, alpha = 0.8, na.rm = T ), size = 3, alpha = 0.6 )  +
-	#scale_color_brewer(palette = "Set1") +
-    scale_color_manual( name = "Species",
+	geom_point( aes( long, lat, color = species, shape = species), 
+				subset( data, species %in% out, size = 10, na.rm = T ), size = 3, alpha = 0.8 )  +
+	    scale_color_manual( name = "Species",
                         limits = out, 
                         labels = out_names,
-                        values = c( "#4DAF4A", "#E41A1C", 
-                                    "#377EB8", "#984EA3",  
-                                    "#FF7F00", "#FFFF33", 
-                                    "#A65628", "#F781BF" )) +
+                        values = c( "#009E73", "#56B4E9", 
+                                    "#D55E00", "#000000",  
+                                    "#E69F00", "#CC79A7", 
+                                    "#0072B2", "#F0E442" )) +
+    scale_shape_manual( name = "Species",
+                        limits = out, 
+                        labels = out_names,
+                        values =c( 15, 10,
+                        		   19, 12,
+                        		   17, 18, 
+                        		   3, 25)) +
 	labs( x = "longitude (degrees)", y="latitude (degrees)" ) +
 	theme( panel.background = element_rect( fill = NA ),
 		   panel.grid.major = element_line( colour = "grey90" ),
 		   axis.title = element_text( size = 10 ),
-		   legend.position = "bottom" )
+		   legend.position = "bottom",
+		   legend.key = element_rect(fill = NA, color = NA) )
 
 
 elevp =
@@ -373,8 +394,12 @@ elevp =
     	   axis.ticks.x = element_blank(), 	 
     	   axis.title.y = element_text(size=10)) +
     scale_x_discrete( limits = out, labels = out_names ) +
+    scale_fill_manual(values = c( "#56B4E9", "#D55E00", 
+                                  "#009E73", "#000000",  
+                                  "#E69F00", "#CC79A7", 
+                                  "#0072B2", "#F0E442" )) +
     labs(x="", y = "Elevation") + 
-    scale_fill_brewer( palette = "Set1" ) +
+    #scale_fill_brewer( palette = "Set1" ) +
     theme( legend.position='none', 
     	  plot.background = element_rect( colour = "black" ))
 
@@ -438,8 +463,11 @@ eh_map2 =
     			data = subdata, 
     			color= "white", 
     			size = 5.5 ) +
-    labs( x= "longitude (degrees)", y ="latitude (degrees)", size = 20 ) + 
-    theme( axis.text = element_text(size = 12), axis.title = element_text(size=16)) +
+    labs( x = "longitude (degrees)", 
+    	  y ="latitude (degrees)", 
+    	  size = 20 ) + 
+    theme( axis.text = element_text(size = 12), 
+    	   axis.title = element_text(size=16)) +
     scale_bar( lon = -65.5, 
      			lat = -21.45, 
      			distance_lon = 50, 
