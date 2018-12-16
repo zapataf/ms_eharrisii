@@ -15,9 +15,9 @@
 
 \author[1]{Felipe Zapata}
 \author[2,3]{Daniel Villarroel}
-\affil[1]{Department of Ecology and Evolutionary Biology, University of California, Los Angeles, 621 Charles E. Young Drive South, Los Angeles, California, 90095, U.S.A.}
-\affil[2]{Fundación Amigos de la Naturaleza (FAN), Km. 7 1/2 Doble Vía La Guardia, Santa Cruz, Bolivia}
-\affil[3]{Museo de Historia Natural Noel Kempff Mercado, Universidad Autónoma Gabriel René Moreno. Avenida Irala 565, Santa Cruz, Bolivia}
+\affil[1]{Department of Ecology and Evolutionary Biology, University of California, Los Angeles, Los Angeles, California, U.S.A.}
+\affil[2]{Fundación Amigos de la Naturaleza, Santa Cruz, Bolivia}
+\affil[3]{Museo de Historia Natural Noel Kempff Mercado, Universidad Autónoma Gabriel René Moreno, Santa Cruz, Bolivia}
 \corrauthor[1]{Felipe Zapata}{fzapata@ucla.edu}
 
 % \keywords{Keyword1, Keyword2, Keyword3}
@@ -54,83 +54,83 @@ A total of 809 herbarium specimens from all species of \emph{Escallonia} and the
 
 \subsection*{Morphological measurements}
 
-The new species differs from other \emph{Escallonia} species in overall leaf shape and flower number. Therefore, we measured leaf length and width, and counted the number of flowers per inflorescence in all specimens. On each specimen, we recorded leaf measurements from three different leaves and then averaged to generate mean leaf measurements. We counted flower number on one inflorescence per specimen.
+Because the new species differs from other \emph{Escallonia} species in overall leaf shape and flower number, we tested the hypothesis that the new species boundary exists in the morphological spaces defined by these traits. To quantify leaf shape, we measured leaf length and width, and we counted the number of flowers per inflorescence in all specimens. On each specimen, we recorded leaf measurements from three different leaves and then averaged to generate mean leaf measurements. We counted flower number on one inflorescence per specimen.
 
 \subsection*{Morphological discontinuities}
 
-We assessed morphological discontinuities in leaf shape and flower number between the new species and all \emph{Escallonia} species using the method of \cite{Zapata:2012it}. For these analyses, we used a frequency cutoff of 0.15 and statistical confidence of 0.90. Therefore, we inferred morphological discontinuities when the proportions of the tolerance limits covering the morphological variation for each pair of species overlapped by less than 0.15. All analyses were carried out in R 3.4.3 \citep{R-base}; source code and the data used in these analyses are available in a git repository at \texttt{http://github.com/zapataf/ms\_eharrisii}
+We assessed morphological discontinuities in leaf shape and flower number between the new species and all \emph{Escallonia} species using the method of \cite{Zapata:2012it}. This pairwise method assesses whether the overlap of morphological values is below a given threshold to indicate a discontinuity, and thus support a species boundary. To determine morphological overlap, this method estimates the overlap of statistical tolerance regions in the morphological space defined by measurements of two species. Statistical tolerance regions correspond to the regions estimated with statistical confidence $\gamma$ that encompass a proportion $\beta$ of a population (i.e., a species). In this study, we used statistical confidence $\gamma$ = 0.90 and a threshold 0.15. Therefore, we inferred a morphological discontinuity when proportions $\beta \geq$  0.85 (one minus threshold) of each species in a pairwise comparison did not overlap. For leaf shape, we estimated the statistical tolerance regions for each species sharing a single point along the ridgeline manifold. The ridgeline manifold is the curve that includes all the critical points (maxima, minima, and saddles) of the bivariate normal mixture describing variation in leaf shape implied by each pairwise comparison. For flower number, we estimated one-tailed statistical tolerance regions describing variation in flower number implied by each pairwise comparison. All analyses were carried out in R 3.5.0 \citep{R-base}; source code and the data used in these analyses are available in a git repository at \texttt{http://github.com/zapataf/ms\_eharrisii}
 
 The electronic version of this article in Portable Document Format (PDF) will represent a published work according to the International Code of Nomenclature for algae, fungi, and plants (ICN), and hence the new names contained in the electronic version are effectively published under that Code from the electronic edition alone. In addition, new names contained in this work which have been issued with identifiers by IPNI will eventually be made available to the Global Names Index. The IPNI LSIDs can be resolved and the associated information viewed through any standard web browser by appending the LSID contained in this publication to the prefix "http://ipni.org/". The online version of this work is archived and available from the following digital repositories: PeerJ, PubMed Central, and CLOCKSS.
 
 \section*{Results \& discussion}
 
-\subsection*{Discontinuities in leaf morphology}
+\subsection*{Discontinuity in leaf morphology}
 
-The new species has small narrowly elliptic leaves, which are uncommon in \emph{Escallonia} (Figure \ref{fig:fig1}). The weigh of the evidence supporting a morphological discontinuity in leaf morphology is strong between the new species and the following 20 species: \emph{E. angustifolia} C. Presl, \emph{E. bifida} Link \& Otto, \emph{E. chlorophylla} Cham. \& Schltdl., \emph{E. farinacea} A. St.-Hil., \emph{E. herrerae} Mattf., \emph{E. hispida} (Vell.) Sleumer, \emph{E. illinita} C. Presl, \emph{E. laevis} (Vell.) Sleumer, \emph{E. micrantha} Mattf., \emph{E. millegrana} Griseb., \emph{E. myrtoidea} Bertero ex DC., \emph{E. obtusissima} A. St.-Hil., \emph{E. paniculata} (Ruiz \& Pav.) Roem. \& Schult., \emph{E. pendula} (Ruiz \& Pav.) Pers., \emph{E. petrophila} Rambo \& Sleumer, \emph{E. piurensis} Mattf., \emph{E. pulverulenta} (Ruiz \& Pav.) Pers., \emph{E. reticulata} Sleumer, \emph{E. revoluta} (Ruiz \& Pav.) Pers., and \emph{E. schreiteri} Sleumer (Figure \ref{fig:fig2}). These results support the hypothesis of a species boundary between the new species and 20 currently known \emph{Escallonia} species.
+The new species has small narrowly elliptic leaves (14.5-19.7 x 1.6-3.7 mm), which are uncommon in \emph{Escallonia} (Figure \ref{fig:Figure1}). The weight of the evidence supporting a morphological discontinuity in leaf morphology is strong between the new species and the following 20 species: \emph{E. angustifolia} C. Presl, \emph{E. bifida} Link \& Otto, \emph{E. chlorophylla} Cham. \& Schltdl., \emph{E. farinacea} A. St.-Hil., \emph{E. herrerae} Mattf., \emph{E. hispida} (Vell.) Sleumer, \emph{E. illinita} C. Presl, \emph{E. laevis} (Vell.) Sleumer, \emph{E. micrantha} Mattf., \emph{E. millegrana} Griseb., \emph{E. myrtoidea} Bertero ex DC., \emph{E. obtusissima} A. St.-Hil., \emph{E. paniculata} (Ruiz \& Pav.) Roem. \& Schult., \emph{E. pendula} (Ruiz \& Pav.) Pers., \emph{E. petrophila} Rambo \& Sleumer, \emph{E. piurensis} Mattf., \emph{E. pulverulenta} (Ruiz \& Pav.) Pers., \emph{E. reticulata} Sleumer, \emph{E. revoluta} (Ruiz \& Pav.) Pers., and \emph{E. schreiteri} Sleumer (Figure \ref{fig:Figure2}). These results support the hypothesis of a species boundary between the new species and 20 currently known \emph{Escallonia} species.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{fig1}
-\caption{Bivariate plots for variation in lamina length (mm) on the X-axis and lamina width (mm) on the Y-axis. In each panel, new species in light triangles, currently known species in dark circles, species name of the currently known species on top.}
-\label{fig:fig1}
+\includegraphics[width=\linewidth]{Figure1}
+\caption{Variation in leaf morphology in \emph{Escallonia}. Each panel corresponds to the pairwise comparison between a currently known species (dark circles) and the new species (\emph{E. harrisii}; light triangles) for lamina length (X-axis) and lamina width (Y-axis). \emph{E. harrisii} \emph{vs.} A. \emph{E. alpina}; B. \emph{E. angustifolia}; C. \emph{E. bifida}; D. \emph{E. callcottiae}; E. \emph{E. chlorophylla}; F. \emph{E. cordobensis}; G. \emph{E. discolor}; H. \emph{E. farinacea}; I. \emph{E. florida}; J. \emph{E. gayana}; K. \emph{E. herrerae}; L. \emph{E. hispida}; M. \emph{E. hypoglauca}; N. \emph{E. illinita}; O. \emph{E. laevis}; P. \emph{E. ledifolia}; Q. \emph{E. leucantha}; R. \emph{E. megapotamica}; S. \emph{E. micrantha}; T. \emph{E. millegrana}; U. \emph{E. myrtilloides}; V. \emph{E. myrtoidea}; W. \emph{E. obtusissima}; X. \emph{E. paniculata}; Y. \emph{E. pendula}; Z. \emph{E. petrophila}; AA. \emph{E. piurensis}; BB. \emph{E. polifolia}; CC. \emph{E. pulverulenta}; DD. \emph{E. resinosa}; EE. \emph{E. reticulata}; FF. \emph{E. revoluta}; GG. \emph{E. rosea}; HH. \emph{E. rubra}; II. \emph{E. schreiteri}; JJ. \emph{E. serrata};  KK. \emph{E. tucumanensis}; LL. \emph{E. virgata}.}
+\label{fig:Figure1}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{fig2}
-\caption{Proportion plots, the estimated proportion (Y-axis) covered by tolerance regions sharing a single point along the ridgeline manifold (X-axis). In each panel, new species in light color, currently known species in dark color, species name of the currently known species on top, dashed line corresponds to the cutoff threshold to infer a morphological discontinuity.}
-\label{fig:fig2}
+\includegraphics[width=\linewidth]{Figure2}
+\caption{Discontinuity in leaf morphology in \emph{Escallonia}. Each panel corresponds to the pairwise comparison between a currently known species (dark continuous line) and the new species (\emph{E. harrisii}; light continuous line). The continuous lines show the estimated proportion (Y-axis) covered with confidence $\gamma$ = 0.90 by the tolerance regions sharing a single point along the ridgeline manifold (X-axis). The ridgeline manifold is the curve that includes all the critical points of the bivariate normal mixture describing the morphological variation implied by each pairwise comparison in Figure 1. The ridgeline manifold ranges from zero, the bivariate mean of the new species (\emph{E. harrisii}), to one, the bivariate mean of the currently known species. The dashed line marks proportion $\beta$ = 0.85 (one minus threshold 0.15) below which overlap indicates lack of a morphological discontinuity. \emph{E. harrisii} \emph{vs.} A. \emph{E. alpina}; B. \emph{E. angustifolia}; C. \emph{E. bifida}; D. \emph{E. callcottiae}; E. \emph{E. chlorophylla}; F. \emph{E. cordobensis}; G. \emph{E. discolor}; H. \emph{E. farinacea}; I. \emph{E. florida}; J. \emph{E. gayana}; K. \emph{E. herrerae}; L. \emph{E. hispida}; M. \emph{E. hypoglauca}; N. \emph{E. illinita}; O. \emph{E. laevis}; P. \emph{E. ledifolia}; Q. \emph{E. leucantha}; R. \emph{E. megapotamica}; S. \emph{E. micrantha}; T. \emph{E. millegrana}; U. \emph{E. myrtilloides}; V. \emph{E. myrtoidea}; W. \emph{E. obtusissima}; X. \emph{E. paniculata}; Y. \emph{E. pendula}; Z. \emph{E. petrophila}; AA. \emph{E. piurensis}; BB. \emph{E. polifolia}; CC. \emph{E. pulverulenta}; DD. \emph{E. resinosa}; EE. \emph{E. reticulata}; FF. \emph{E. revoluta}; GG. \emph{E. rosea}; HH. \emph{E. rubra}; II. \emph{E. schreiteri}; JJ. \emph{E. serrata};  KK. \emph{E. tucumanensis}; LL. \emph{E. virgata}.}
+\label{fig:Figure2}
 \end{figure}
 
-\subsection*{Discontinuities in flower number}
+\subsection*{Discontinuity in flower number}
 
-The new species has inflorescences with up to three flowers, which are uncommon in \emph{Escallonia} (Figure \ref{fig:fig3}). There is support for a morphological discontinuity in flower number between the new species and 30 species, 19 of which are also separated by a discontinuity in leaf morphology (see above, all species except \emph{E. petrophila}). The remaining 11 species separated only by a morphological discontinuity in flower number are: \emph{E. alpina} Poepp. ex DC., \emph{E. cordobensis} (Kuntze) Hosseus, \emph{E. discolor} Vent., \emph{E. florida} Poepp. ex DC., \emph{E. hypoglauca} Herzog, \emph{E. leucantha} J. Rémy, \emph{E. megapotamica} Spreng., \emph{E. resinosa} (Ruiz \& Pav.) Pers, \emph{E. rubra} (Ruiz \& Pav.) Pers., \emph{E. tucumanensis} Hosseus, and \emph{E. virgata} (Ruiz \& Pav.) Pers. (Figure \ref{fig:fig4}). These results support the hypothesis of a species boundary between the new species and 30 currently known \emph{Escallonia} species.
+The new species has inflorescences with up to three flowers, which are uncommon in \emph{Escallonia} (Figure \ref{fig:Figure3}). There is support for a morphological discontinuity in flower number between the new species and 30 species, 19 of which are also separated by a discontinuity in leaf morphology (see above, all species except \emph{E. petrophila}). The remaining 11 species separated only by a morphological discontinuity in flower number are: \emph{E. alpina} Poepp. ex DC., \emph{E. cordobensis} (Kuntze) Hosseus, \emph{E. discolor} Vent., \emph{E. florida} Poepp. ex DC., \emph{E. hypoglauca} Herzog, \emph{E. leucantha} J. Rémy, \emph{E. megapotamica} Spreng., \emph{E. resinosa} (Ruiz \& Pav.) Pers, \emph{E. rubra} (Ruiz \& Pav.) Pers., \emph{E. tucumanensis} Hosseus, and \emph{E. virgata} (Ruiz \& Pav.) Pers. (Figure \ref{fig:Figure4}). These results support the hypothesis of a species boundary between the new species and 30 currently known \emph{Escallonia} species.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{fig3}
-\caption{Variation in flower number in \emph{Escallonia}.}
-\label{fig:fig3}
+\includegraphics[width=\linewidth]{Figure3}
+\caption{Variation in flower number in \emph{Escallonia}. New species (\emph{E. harrisii}) at the left.}
+\label{fig:Figure3}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{fig4}
-\caption{Box plots for variation in flower number. In each panel, new species in light color, currently known species in dark color, species name of the currently known species on top, dashed line is the upper tolerance limit for the new species, dotted line is the lower tolerance limit for the currently known species.}
-\label{fig:fig4}
+\includegraphics[width=\linewidth]{Figure4}
+\caption{Discontinuity in flower number in \emph{Escallonia}. Each panel corresponds to the pairwise comparison between a currently known species (dark color) and the new species (\emph{E. harrisii}; light color). The dotted and dashed lines estimate with confidence $\gamma$ = 0.90 the limits of one-tailed tolerance regions encompassing a proportion $\beta$ = 0.85 (one minus threshold 0.15) of the currently known and new species, respectively. \emph{E. harrisii} \emph{vs.} A. \emph{E. alpina}; B. \emph{E. angustifolia}; C. \emph{E. bifida}; D. \emph{E. callcottiae}; E. \emph{E. chlorophylla}; F. \emph{E. cordobensis}; G. \emph{E. discolor}; H. \emph{E. farinacea}; I. \emph{E. florida}; J. \emph{E. gayana}; K. \emph{E. herrerae}; L. \emph{E. hispida}; M. \emph{E. hypoglauca}; N. \emph{E. illinita}; O. \emph{E. laevis}; P. \emph{E. ledifolia}; Q. \emph{E. leucantha}; R. \emph{E. megapotamica}; S. \emph{E. micrantha}; T. \emph{E. millegrana}; U. \emph{E. myrtilloides}; V. \emph{E. myrtoidea}; W. \emph{E. obtusissima}; X. \emph{E. paniculata}; Y. \emph{E. pendula}; Z. \emph{E. petrophila}; AA. \emph{E. piurensis}; BB. \emph{E. polifolia}; CC. \emph{E. pulverulenta}; DD. \emph{E. resinosa}; EE. \emph{E. reticulata}; FF. \emph{E. revoluta}; GG. \emph{E. rosea}; HH. \emph{E. rubra}; II. \emph{E. schreiteri}; JJ. \emph{E. serrata};  KK. \emph{E. tucumanensis}; LL. \emph{E. virgata}.}
+\label{fig:Figure4}
 \end{figure}
 
 \subsection*{Support for the new species boundary}
 
-Taken together, the results described above show there is evidence supporting a species boundary between the new species and 31 currently known \emph{Escallonia} species. In most cases the new species boundary spans differences in both leaf and flower traits (19 species). In other cases, the species boundary is supported with evidence from one of the traits (12 species). This is consistent with the species concept we apply in this study \citep{deQueiroz:2007di}. For instance, \emph{E. micrantha} and the new species differ in both leaf shape and flower number, whereas \emph{E. florida} and the new species differ in flower number but are broadly similar in leaf shape (Figure \ref{fig:fig2}, Figure \ref{fig:fig4}). No material for DNA sequencing was available to place the new species in the \emph{Escallonia} phylogeny, therefore it is not possible to discern whether morphological similarities between the new species and other species reflect convergent evolution or recent divergence with little differentiation.
+Taken together, the results described above show there is evidence supporting a species boundary between the new species and 31 currently known \emph{Escallonia} species. In most cases the new species boundary spans differences in both leaf and flower traits (19 species). In other cases, the species boundary is supported with evidence from one of the traits (12 species). This is consistent with the species concept we apply in this study \citep{deQueiroz:2007di}. For instance, \emph{E. micrantha} and the new species differ in both leaf shape and flower number, whereas \emph{E. florida} and the new species differ in flower number but are broadly similar in leaf shape (Figure \ref{fig:Figure2}, Figure \ref{fig:Figure4}). No material for DNA sequencing was available to place the new species in the \emph{Escallonia} phylogeny, therefore it is not possible to discern whether morphological similarities between the new species and other species reflect convergent evolution or recent divergence with little differentiation.
 
 \subsection*{Lack of support for morphological discontinuities, differences in habit and habitat, and  alternative explanations}
 
-The weigh of the evidence supporting a morphological discontinuity between the new species and the following seven species was weak: \emph{E. callcottiae} Hook. \& Arn., \emph{E. gayana} Acevedo \& Kausel, \emph{E. ledifolia} Sleumer, \emph{E. myrtilloides} L. f., \emph{E. polifolia} Hook., \emph{E. rosea} Griseb., and \emph{E. serrata} Sm.. There are three non-exclusive reasons to explain why this result does not undermine the hypothesis of a species boundary between the new species and any of these seven species: \textit{i) Habit and habitat}. \emph{E. myrtilloides}, \emph{E. polifolia}, \emph{E. rosea}, \emph{E. serrata}, and the new species all differ in habit and habitat. \emph{E. myrtilloides} are small trees with thick branches and it is restricted to the páramos and jalcas in the tropical Andes above 2,600 m. \emph{E. polifolia} are small shrubs with revolute, tomentulose leaves, and it is endemic to the jalcas in the Cha-Chapoyas region (northern Perú) above 2,800 m. \emph{E. rosea} are shrubs from the wet temperate forests of southern Chile (Valdivian forests). \emph{E. serrata} are procumbet shrubs endemic to Patagonia in southern Chile and Argentina. In contrast, the new species are profusely branched sub-shrubs with decumbent branching and slender twigs, and it is endemic to the dry forest in southern Bolivia at around 1,700 m. \textit{ii) Geographic sampling}. One could propose that the new species is an allopatric population of any of the seven species. This would predict there could be unsampled populations from any of the seven species across the geographic range of \emph{Escallonia}. This is highly unlikely because other \emph{Escallonia} species have been sampled thoroughly at intervening localities (Figure \ref{fig:fig5}) and we have examined around 3,900 \emph{Escallonia} herbarium specimens that indicate that the geographic range of the seven species is well sampled. And \textit{iii) Statistical power}. The sample size for \emph{E. callcottiae}, \emph{E. gayana}, and \emph{E. ledifolia} is very low (Table~\ref{tab:widgets}), which lowers the statistical power of the method we used to diagnose morphological discontinuities \citep{Zapata:2012it}. Therefore the lack of evidence supporting a morphological discontinuity in these case may just be a statistical artifact. 
+The weight of the evidence supporting a morphological discontinuity between the new species and the following seven species was weak: \emph{E. callcottiae} Hook. \& Arn., \emph{E. gayana} Acevedo \& Kausel, \emph{E. ledifolia} Sleumer, \emph{E. myrtilloides} L. f., \emph{E. polifolia} Hook., \emph{E. rosea} Griseb., and \emph{E. serrata} Sm.. There are three non-exclusive reasons to explain why this result does not undermine the hypothesis of a species boundary between the new species and any of these seven species: \textit{i) Habit and habitat}. \emph{E. myrtilloides}, \emph{E. polifolia}, \emph{E. rosea}, \emph{E. serrata}, and the new species all differ in habit and habitat. \emph{E. myrtilloides} includes small trees with thick branches, obovate glabrous leaves, and it is restricted to the páramos and jalcas in the tropical Andes above 2,600 m. \emph{E. polifolia} includes small shrubs with revolute, tomentulose leaves, and it is endemic to the jalcas in the Cha-Chapoyas region (northern Perú) above 2,800 m. \emph{E. rosea} includes shrubs with lanceolate to obovate-lanceolate leaves, largely glabrous (only pubescent adaxially along the mid vein), and it is restricted to the wet temperate forests of southern Chile (Valdivian forests). \emph{E. serrata} includes procumbet shrubs with mostly obovate-cuneate leaves, often entirely glabrous (sometimes puberulous adaxially along the veins), and it is endemic to Patagonia in southern Chile and Argentina. In contrast, the new species includes profusely branched sub-shrubs with decumbent branching and slender twigs, and it is endemic to the dry forest in southern Bolivia at around 1,700 m. \textit{ii) Geographic sampling}. One could propose that the new species is an allopatric population of any of the seven species. This would predict there are unsampled populations from any of the seven species across the geographic range of \emph{Escallonia}. This is highly unlikely because other \emph{Escallonia} species have been sampled thoroughly at intervening localities (Figure \ref{fig:Figure5}) and we have examined around 3,900 \emph{Escallonia} herbarium specimens that indicate that the geographic range of the seven species is well sampled \citep{Zapata:2011aa}. And \textit{iii) Statistical power}. The sample size for \emph{E. callcottiae}, \emph{E. gayana}, and \emph{E. ledifolia} is very low (Table~\ref{tab:widgets}), which lowers the statistical power of the method we used to diagnose morphological discontinuities \citep{Zapata:2012it}. Therefore the lack of evidence supporting a morphological discontinuity in these cases may just be a statistical artifact. 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{fig5}
-\caption{Geographic distribution of species lacking support for morphological discontinuities. Inset box plot for distribution along elevation.}
-\label{fig:fig5}
+\includegraphics[width=\linewidth]{Figure5}
+\caption{A. Geographic distribution of species lacking support for morphological discontinuities \emph{vs} the new species (\emph{E. harrisii}). Grey points correspond to all other \emph{Escallonia} species. B. Elevation range of species lacking support for morphological discontinuities \emph{vs.} the new species (\emph{E. harrisii}).}
+\label{fig:Figure5}
 \end{figure}
 
 \section*{Taxonomic Treatment}
-\textbf{\emph{Escallonia harrisii}} Zapata \& Villarroel, sp. nov. (Figure \ref{fig:Figure6_Eh})
+\textbf{\emph{Escallonia harrisii}} Zapata \& Villarroel, sp. nov. (Figure \ref{fig:Figure6})
 
 \textbf{Type}: BOLIVIA. \textsc{Santa Cruz}. Vallegrande. San Blas (abajo) y La Estancilla, 5\-8 Km de la ciudad de Vallegrande. 18$^\circ$ 29$^\prime$ S, 63$^\circ$ 59$^\prime$ W, 2200 m, 19 November 1994 (fl), \textit{Vargas, I.G.} 3673 (holotype: MO, isotypes: NY; USZ).
 
 \textbf{Paratype}: BOLIVIA. \textsc{Chuquisaca}. 4 km de la comunidad de San Bartolo, sobre el camino a Nuevo Mundo, 19$^\circ$ 39$^\prime$ S, 64$^\circ$ 02$^\prime$ W, 1350 m, 14 December 2013 (fl, fr), \textit{Villarroel et al.} 2322 (UB; USZ).
 
-\textbf{Diagnosis}: Decumbent branching, small narrowly elliptic leaves, inflorescences with up to three flowers, flowers with red petals
+\textbf{Diagnosis}: Decumbent branching, small narrowly elliptic leaves (14.5-19.7 x 1.6-3.7 mm), inflorescences with up to three flowers, flowers with red petals
 
-\textbf{Description}: Perennial sub-shrub, to 2 m tall, profusely branched, branches decumbent, 1.9-1.0 mm diameter, angular to terete, outer bark scaly, grey, new growth branches angular, outer bark smooth, reddish, densely puberulent, hairs simple, white, 0.1-0.2 mm long. Leaves spiral; petiole 0.6-0.8 mm long; lamina oblanceolate, 14.5-19.7 mm long, 1.6-3.7 mm wide, basally attenuate, apically acute, abaxially dull with scattered glands, minutely puberulent (simple hairs), adaxially  lustrous green, glabrous; margin slightly serrate, glandular; secondary veins three to four pairs, brochidodromous. Inflorescences terminal, 1 to 3-flowered. Flowers hermaphrodite, pentamerous. Pedicels 2-4.7 mm long, 0.4-0.6 mm diameter, terete, densely puberulent (simple hairs). Ovary inferior, turbinate, 1.5-3 x 2.4-3.8 mm, puberulent. Calyx tube 0.5-0.7 mm long; lobes narrowly triangular-subulate, 5.8-10 x 0.8-1.3 mm, abaxially and adaxially puberulent, margin glandular, sparsely ciliate, sometimes recurved. Corolla actinomorphic, glabrous; petals red, spatulate, 6.7-7.9 x 0.9-1.17 mm at base, 1.5-1.75 mm at the widest point, margin minutely crenulate. Stamens 5; filaments glabrous, terete, 4.2-4.9 mm long; anthers versatile, sub-basifixed, narrowly oblong 1.30 x 0.44 mm. Style terete, 4.4-6.3 mm long. Stigma discoid. Disk flat. Fruit brown, turbinate, 3.10-4.12 x 3.41-4.70 mm, dehiscence septicidal. Seeds linear, 0.04 mm long, striate.
+\textbf{Description}: Perennial sub-shrub, to 2 m tall, profusely branched, branches decumbent, 1.9-1.0 mm diameter, angular to terete, outer bark scaly, grey, new growth branches angular, outer bark smooth, reddish, densely puberulent, hairs simple, white, 0.1-0.2 mm long. Leaves spiral; petiole 0.6-0.8 mm long; lamina oblanceolate, 14.5-19.7 x 1.6-3.7 mm, basally attenuate, apically acute, abaxially dull with scattered glands, minutely puberulent (simple hairs), adaxially  lustrous green, glabrous; margin slightly serrate, glandular; secondary veins three to four pairs, brochidodromous. Inflorescences terminal, 1 to 3-flowered. Flowers hermaphrodite, pentamerous. Pedicels 2-4.7 mm long, 0.4-0.6 mm diameter, terete, densely puberulent (simple hairs). Ovary inferior, turbinate, 1.5-3 x 2.4-3.8 mm, puberulent. Calyx tube 0.5-0.7 mm long; lobes narrowly triangular-subulate, 5.8-10 x 0.8-1.3 mm, abaxially and adaxially puberulent, margin glandular, sparsely ciliate, sometimes recurved. Corolla actinomorphic, glabrous; petals red, spatulate, 6.7-7.9 mm long, 0.9-1.17 mm wide at base, 1.5-1.75 mm at the widest point, margin minutely crenulate. Stamens 5; filaments glabrous, terete, 4.2-4.9 mm long; anthers versatile, sub-basifixed, narrowly oblong 1.30 x 0.44 mm. Style terete, 4.4-6.3 mm long. Stigma discoid. Disk flat. Fruit brown, turbinate, 3.10-4.12 x 3.41-4.70 mm, dehiscence septicidal. Seeds linear, 0.04 mm long, striate.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{Figure6_Eh}
-\caption{\emph{Escallonia harrisii}. Zapata \& Villarroel. a. Habit, b. Fruit, c. Flower, d. Flower with petals removed, e. Petal, f. Mature leaf, g. Young leaf, h. Detail of leaf margin, i. Detail of outer bark in mature shoot. Illustration by B. Alongi.}
-\label{fig:Figure6_Eh}
+\includegraphics[width=\linewidth]{Figure6}
+\caption{\emph{Escallonia harrisii}. Zapata \& Villarroel. a. Habit, b. Fruit, c. Flower, d. Flower with petals removed, e. Petal, f. Mature leaf, g. Young leaf, h. Detail of leaf margin, i. Detail of outer bark in mature shoot. Illustration by B. Alongi based on \textit{Vargas, I.G.} 3673 (MO) and \textit{Wood et al.} 13266 (K).}
+\label{fig:Figure6}
 \end{figure}
 
 \textbf{Additional Specimens Examined}: BOLIVIA. \textsc{Chuquisaca}. Calvo. Serranía Incahuasi. 10-15 km from Muyupampa on road to Lagunillas, 19$^\circ$ 21$^\prime$ $51''$ S, 63$^\circ$ 50$^\prime$ $09''$ W, 1500 m, 8 March 1998 (fl, fr), \textit{Wood et al.} 13266 (K); \textsc{Chuquisaca}. Calvo. Serranía del Incahuasi, 10-15 km de Muyupampa sobre el camino a Lagunillas, 19$^\circ$ 49$^\prime$ $39''$ S, 63$^\circ$ 43$^\prime$ $31''$ W, 1580 m, 25 March 2013 (fl, fr), \textit{Wood et al.} 27640 (K; USZ); \textsc{Chuquisaca}. Calvo. Serranía Incahuasi, entre Muyupampa y Lagunillas, 19$^\circ$ 49$^\prime$ $38''$  S, 63$^\circ$ 43$^\prime$ $30''$ W, 1580 m, 13 December 2013 (fl, fr), \textit{Villarroel et al.} 2321 (UB; USZ); \textsc{Tarija}. O’Connor. On w side of easternmost pass on road from Entre Rios to Palos Blancos, 21$^\circ$ 25$^\prime$ $28''$ S, 63$^\circ$ 54$^\prime$ $47''$ W, 1400 m, 17 January 2001 (fr), \textit{Wood and Goyder} 16822 (K).
@@ -139,15 +139,15 @@ The weigh of the evidence supporting a morphological discontinuity between the n
 
 \textbf{Phenology}: Flowering and fruiting specimens have been collected between November and March. There are no observations yet on pollination or dispersal biology.
 
-\textbf{Distribution}: Restricted to the south of Bolivia (Figure \ref{fig:fig7}). Locally common.
+\textbf{Distribution}: Restricted to the south of Bolivia (Figure \ref{fig:Figure7}). Locally common.
 
 \textbf{Habitat}: Plants of this species grow on rocky outcrops and ridges of red sandstone, mostly on steep slopes and summits between 1,300-2,200 m elevation. The dominant vegetation in the region where \emph{E. harrisii} grows is dry forest on the slopes (i.e., Chaco Serrano forest) and semi-deciduous forests on the mountaintops (i.e., Tucumano Boliviano forest) 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{fig7}
-\caption{Collection sites of \emph{Escallonia harrisii}. Topleft inset map of South America, Bolivia shaded. Topright inset map of Bolivia, area of the main figure shaded}
-\label{fig:fig7}
+\includegraphics[width=\linewidth]{Figure7}
+\caption{A. Collection sites of the new species \emph{E. harrisii}. B. Map of South America, Bolivia shaded. C. Map of Bolivia, area of A. shaded}
+\label{fig:Figure7}
 \end{figure}
 
 \textbf{Conservation status}: Although \emph{E. harrisii} has been collected in few localities, it is locally common and it may not be threatened at present. Because it is restricted to the tropical dry forest, one of the most threatened tropical habits \citep{DRYFLOR:2016gr}, it could become potentially vulnerable. However, more data and population-level studies are needed to assess the conservation status of this species. An IUCN category of Data Deficient (DD) is assigned, according to IUCN criteria \citep{IUCN:2012aa}.
@@ -156,10 +156,45 @@ The weigh of the evidence supporting a morphological discontinuity between the n
 
 Ecologically, no other species of \emph{Escallonia} has been found in sympatry with \emph{E. harrisii}. Only \emph{E. millegrana}, \emph{E. micrantha}, \emph{E. pendula} and \emph{E. herrerae} grow at equivalent elevations and in similar habitats (i.e. dry forests in inter-Andean valleys). These four species are strikingly different in all morphological traits compared to \emph{E. harrisii} (Table~\ref{tab:widgets}). Although \emph{E. millegrana} also occurs in Bolivia, plants of this species are tall deciduous shrubs (up to 4 m) with long leaves (up to 15 cm), spines in young shoots, and inflorescences with around 850 flowers (Table~\ref{tab:widgets}).
 
+\subsection*{Key to the \emph{Escallonia} species in the region where \emph{E. harrisii} occurs}
+
+1. Calyx lobes $>$ 1 mm ............................................................................................................................... 2
+
+\indent 2. Petal length $<$ 5 mm ................................................................................................... \emph{E. millegrana}
+
+\indent 2a. Petal length $\geq$ 5 mm ........................................................................................................................ 3
+
+\indent\indent 3. Pedicel width $>$ 0.7 mm (stout, rigid) ................................................................. \emph{E. myrtilloides}
+
+\indent\indent 3a. Pedicel width $<$ 0.5 mm ........................................................................................................ 4
+
+\indent\indent\indent 4. Lamina width at the widest point 11-30 mm; petal length 13-17 mm ........ \emph{E. tucumanensis}
+
+\indent\indent\indent 4a. Lamina width at the widest point $<$ 22 mm; petal length $<$ 12 mm ................................ 5
+
+\indent\indent\indent\indent 5. Lamina width at the widest point $<$ 4 mm ...................................................... \emph{\textbf{E. harrisii}}
+
+
+\indent\indent\indent\indent 5a. Lamina width at the widest point $>$ 7 mm ............................................... \emph{E. hypoglauca}
+
+\noindent 1a. Calyx lobes $<$ 0.5 mm .......................................................................................................................... 6
+
+\indent 6. Petiole length $<$ 10 mm; lamina width at the widest point $<$ 15 mm .............................................. 7
+
+\indent\indent 7. Lamina length $<$ 50 mm, oblongo-cuneate; petal length $\leq$ 6 mm ............................ \emph{E. resinosa}
+
+\indent\indent 7a. Lamina length $>$ 42 mm, lanceolate; petal length $>$ 6 mm ................................... \emph{E. schreiteri}
+
+\indent 6a. Petiole length $\geq$ 10 mm; lamina width at the widest point $\geq$ 15 mm ........................................... 8
+
+\indent\indent 8. Pedicel length 4-6 mm; restricted to dry forests  ..................................................... \emph{E. reticulata}
+
+\indent\indent 8a. Pedicel length 2-3 mm; restricted to cloud forests  .................................................. \emph{E. paniculata}
+
 
 \begin{table*}[hbt]
 %\ifnextchar[{\eatarg}{}
-[tbp]
+
 \tiny
 \begin{center}
 %\begin{threeparttable}
@@ -203,7 +238,7 @@ Ecologically, no other species of \emph{Escallonia} has been found in sympatry w
 \emph{E. piurensis} & 12 & 24 & 36.5 & 44.7 & 9.7 & 11.4 & 13.7 & 20 & 44.9 & 75 & 2500 & 3300\\
 \emph{E. polifolia} & 9 & 13.8 & 17.6 & 19.5 & 2.3 & 2.8 & 3.8 & 1 & 1 & 1 & 2900 & 3500\\
 \emph{E. pulverulenta} & 25 & 41.9 & 54.6 & 72.9 & 17.3 & 26.5 & 37 & 140 & 171.5 & 200 & 0 & 1200\\
-\emph{E. resinosa} & 46 & 20.7 & 34.1 & 52.7 & 5.7 & 8.6 & 13 & 10 & 56.4 & 130 & 2200 & 3776\\
+\emph{*E. resinosa} & 46 & 20.7 & 34.1 & 52.7 & 5.7 & 8.6 & 13 & 10 & 56.4 & 130 & 2200 & 3776\\
 %\rowcolor{Gray}
 \emph{*E. reticulata} & 21 & 55.7 & 68.7 & 80 & 15 & 23.7 & 28.3 & 25 & 55.8 & 100 & 1300 & 2400\\
 \emph{E. revoluta} & 21 & 31.7 & 39.1 & 49.3 & 12.8 & 18.7 & 25.7 & 27 & 75.3 & 180 & 1 & 1642\\
@@ -212,7 +247,7 @@ Ecologically, no other species of \emph{Escallonia} has been found in sympatry w
 %\rowcolor{Gray}
 \emph{*E. schreiteri} & 18 & 42.3 & 56.6 & 74 & 8.3 & 11.1 & 14.7 & 20 & 42.6 & 60 & 1600 & 2954\\
 \emph{E. serrata} & 20 & 8.2 & 14.4 & 21.2 & 4.3 & 6.6 & 9.5 & 1 & 1 & 1 & 5 & 400\\
-\emph{E. tucumanensis} & 18 & 31.7 & 50.5 & 76 & 11 & 18.3 & 30.7 & 6 & 14.2 & 30 & 800 & 2800\\
+\emph{*E. tucumanensis} & 18 & 31.7 & 50.5 & 76 & 11 & 18.3 & 30.7 & 6 & 14.2 & 30 & 800 & 2800\\
 \emph{E. virgata} & 20 & 9.5 & 11.7 & 14.7 & 3.5 & 4.5 & 5.7 & 6 & 13.1 & 28 & 61 & 3000\\
 \bottomrule
 \end{tabular}
