@@ -148,12 +148,18 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
         SPB <- paste(i)
 
         n_SPA <- length(subdata$LAMLEN[subdata$species==SPA])
-        m1 <- array(c(mean(subdata$LAMLEN[subdata$species==SPA]), mean(subdata$LAMWID[subdata$species==SPA])), dim=c(2,1))
-        Z1 <- var(cbind(subdata$LAMLEN[subdata$species==SPA], subdata$LAMWID[subdata$species==SPA]))
+        m1 <- array(c(mean(subdata$LAMLEN[subdata$species==SPA]), 
+		      mean(subdata$LAMWID[subdata$species==SPA])), 
+		    dim=c(2,1))
+        Z1 <- var(cbind(subdata$LAMLEN[subdata$species==SPA], 
+			subdata$LAMWID[subdata$species==SPA]))
 
         n_SPB <- length(subdata$LAMLEN[subdata$species==SPB])
-        m2 <- array(c(mean(subdata$LAMLEN[subdata$species==SPB]), mean(subdata$LAMWID[subdata$species ==SPB])), dim=c(2,1))
-        Z2 <- var(cbind(subdata$LAMLEN[subdata$species==SPB], subdata$LAMWID[subdata$species==SPB]))
+        m2 <- array(c(mean(subdata$LAMLEN[subdata$species==SPB]), 
+		      mean(subdata$LAMWID[subdata$species ==SPB])), 
+		    dim=c(2,1))
+        Z2 <- var(cbind(subdata$LAMLEN[subdata$species==SPB], 
+			subdata$LAMWID[subdata$species==SPB]))
 
         #Estimate ridgeline manifold
         x <- c()
@@ -179,11 +185,11 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
             {
                 k <- (n_SPA-1)%*%t(c(x[j],y[j])-m1)%*%solve((n_SPA-1)*Z1)%*%(c(x[j],y[j])-m1)
                 chi_quantile <- k*(1/(n_SPA-1))*(qchisq(1-gamma, n_SPA-p))
-                beta_or_chi_probability_SPA<-pchisq(chi_quantile, p, ncp=p/n_SPA, lower.tail = TRUE, log.p = FALSE)
+                beta_or_chi_probability_SPA <- pchisq(chi_quantile, p, ncp=p/n_SPA, lower.tail = TRUE, log.p = FALSE)
 
                 k <- (n_SPB-1)%*%t(c(x[j],y[j])-m2)%*%solve((n_SPB-1)*Z2)%*%(c(x[j],y[j])-m2)
                 chi_quantile <- k*(1/(n_SPB-1))*(qchisq(1-gamma, n_SPB-p))
-                beta_or_chi_probability_SPB<-pchisq(chi_quantile, p, ncp=p/n_SPB, lower.tail = TRUE, log.p = FALSE)
+                beta_or_chi_probability_SPB <- pchisq(chi_quantile, p, ncp=p/n_SPB, lower.tail = TRUE, log.p = FALSE)
 
                 beta_vector_SPA <- append(beta_vector_SPA, beta_or_chi_probability_SPA, after=length(beta_vector_SPA))
                 beta_vector_SPB <- append(beta_vector_SPB, beta_or_chi_probability_SPB, after=length(beta_vector_SPB))
