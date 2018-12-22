@@ -72,39 +72,39 @@ out_names[1] = "New species"
 
 # MAPS
 
-southam = map_data( map = "world",
-					region = c( "argentina",
-								"bolivia",
-								"brazil",
-								"chile",
-								"colombia",
-								"ecuador",
-								"guyana",
-								"paraguay",
-								"peru",
-								"suriname",
-								"uruguay",
-								"venezuela",
-								"panama",
-								"costa rica" ))
+southam = map_data(map = "world",
+		   region = c( "argentina",
+			      "bolivia",
+			      "brazil",
+			      "chile",
+			      "colombia",
+			      "ecuador",
+			      "guyana",
+			      "paraguay",
+			      "peru",
+			      "suriname",
+			      "uruguay",
+			      "venezuela",
+			      "panama",
+			      "costa rica" ))
 
-bolivia = map_data( map = "world",
-					region = c( "bolivia" ))
+bolivia = map_data(map = "world",
+		   region = c( "bolivia" ))
 
 subdata = data[data$species=="harrisii",]
 
-zoom_box = data.frame( xmin = -66,
-					   xmax = -62,
-					   ymin = -22,
-					   ymax = -18 )
+zoom_box = data.frame(xmin = -66,
+		      xmax = -62,
+		      ymin = -22,
+		      ymax = -18 )
 
 eh_bbox = make_bbox( lon = subdata$long, lat = subdata$lat, f = 0.1 )
 
 map2 = get_map( location = eh_bbox,
-				maptype = "satellite",
-				source = "google",
-				color = "bw",
-				zoom = 8 )
+	       maptype = "satellite",
+	       source = "google",
+	       color = "bw",
+	       zoom = 8 )
 
 
 
@@ -317,19 +317,21 @@ for (i in unique(data$species)[unique(data$species) != c("harrisii")])
 ## FIGURE 1
 
 args_leaf_plots = c(leaf_plots,
-					list(nrow = 7,
-						ncol = 6,
-						left = "Lamina Width (mm)",
-						bottom = "Lamina Length (mm)"))
+		    list(nrow = 7,
+			 ncol = 6,
+			 left = "Lamina Width (mm)",
+			 bottom = "Lamina Length (mm)"))
+
 do.call(grid.arrange, args_leaf_plots)
 
 =====
 ## FIGURE 2
 args_proportion_plots = c(proportion_plots,
-							list(nrow = 7,
-								ncol = 6,
-								left = "Proportion within tolerance region",
-								bottom = "Ridgeline manifold"))
+			  list(nrow = 7,
+			       ncol = 6,
+			       left = "Proportion within tolerance region",
+			       bottom = "Ridgeline manifold"))
+
 do.call(grid.arrange, args_proportion_plots)
 
 
@@ -339,19 +341,20 @@ do.call(grid.arrange, args_proportion_plots)
 ggplot(data, aes( x = species, y = NFLOWERS )) +
 	   geom_boxplot( na.rm = T ) +
 	   theme( axis.text.x  = element_text( angle = 90, vjust = 0.5, size = 10 ),
-	   		  axis.title.y = element_text(size = 15 )) +
+		 axis.title.y = element_text(size = 15 )) +
 	   scale_x_discrete( limits = species_names2,
-                       labels = species_names3) +
+			    labels = species_names3) +
        labs( x="", y = "Number of flowers" )
 
 =====
 ## FIGURE 4
 
 args_flowerprop_plots = c(flowerprop_plots,
-							list(nrow = 7,
-							ncol = 6,
-							left = "Number of flowers",
-							bottom = "Species"))
+			  list(nrow = 7,
+			       ncol = 6,
+			       left = "Number of flowers",
+			       bottom = "Species"))
+
 do.call(grid.arrange, args_flowerprop_plots)
 
 =====
@@ -359,12 +362,16 @@ do.call(grid.arrange, args_flowerprop_plots)
 
 ggplot() +
 	geom_polygon( data = southam,
-				  aes( long, lat, group = group ),
-				  fill = NA, color = "grey30" ) +
+		     aes( long, lat, group = group ),
+		     fill = NA, color = "grey30" ) +
 	geom_point( aes( long, lat),
-				subset( data, !(species %in% out), size = 10, alpha = 0.8, na.rm = T ), col="grey65", size = 1.5 ) +
-	geom_point( aes( long, lat, color = species, shape = species),
-				subset( data, species %in% out, size = 10, na.rm = T ), size = 3, alpha = 0.8 )  +
+		   subset( data, !(species %in% out), size = 10, alpha = 0.8, na.rm = T ), 
+		   col = "grey65", 
+		   size = 1.5 ) +
+	geom_point( aes( long, lat, color = species, shape = species ),
+		   subset( data, species %in% out, size = 10, na.rm = T ), 
+		   size = 3, 
+		   alpha = 0.8 )  +
 	    scale_color_manual( name = "Species",
                         limits = out,
                         labels = out_names,
@@ -376,9 +383,9 @@ ggplot() +
                         limits = out,
                         labels = out_names,
                         values =c( 15, 10,
-                        		   19, 12,
-                        		   17, 18,
-                        		   3, 25)) +
+				  19, 12,
+				  17, 18,
+				  3, 25)) +
 	labs( x = "longitude (degrees)", y="latitude (degrees)" ) +
 	theme( panel.background = element_rect( fill = NA ),
 		   panel.grid.major = element_line( colour = "grey90" ),
@@ -389,7 +396,9 @@ ggplot() +
 
 elevp =
 	ggplot( data, aes( species, elev, fill = species )) +
-    geom_boxplot( aes( species, elev ), subset( data, species %in% out), alpha = 0.8, na.rm = T ) +
+    geom_boxplot( aes( species, elev ), 
+		 subset( data, species %in% out), 
+		 alpha = 0.8, na.rm = T ) +
     theme( axis.text.x  = element_blank(),
     	   axis.ticks.x = element_blank(),
     	   axis.title.y = element_text(size=10)) +
@@ -423,12 +432,12 @@ print( elevp, vp = vp1 )
 southam_map =
 	ggplot( ) +
 	geom_polygon( data = southam,
-				  aes(x = long, y = lat, group = group),
-				  fill = NA,
-				  color = "grey30" ) +
+		     aes(x = long, y = lat, group = group),
+		     fill = NA,
+		     color = "grey30" ) +
     geom_polygon( data = bolivia,
-    			  aes(x=long, y = lat, group = group),
-    			  fill = "gray60") +
+		 aes(x=long, y = lat, group = group),
+		 fill = "gray60") +
     theme( panel.background = element_rect(fill = NA),
 		   panel.grid.major = element_line(colour = "grey90"),
 		   axis.text = element_blank(),
@@ -438,15 +447,15 @@ southam_map =
 bolivia_map =
     ggplot() +
     geom_polygon( data = bolivia,
-    			  aes( x = long, y = lat, group = group),
-    			  col = "gray40",
-    			  fill = NA) +
+		 aes( x = long, y = lat, group = group),
+		 col = "gray40",
+		 fill = NA) +
 	geom_rect( data = zoom_box,
-			   aes( xmin = xmin,
-			   		xmax = xmax,
-			   		ymin = ymin,
-			   		ymax = ymax ),
-			   fill = "gray70") +
+		  aes( xmin = xmin,
+		      xmax = xmax,
+		      ymin = ymin,
+		      ymax = ymax ),
+		  fill = "gray70") +
 	theme( panel.background = element_rect(fill = NA),
 		   panel.grid.major = element_line(colour = "grey90"),
 		   axis.text = element_blank(),
@@ -469,14 +478,14 @@ eh_map2 =
     theme( axis.text = element_text(size = 12),
     	   axis.title = element_text(size=16)) +
     scale_bar( lon = -65.5,
-     			lat = -21.45,
-     			distance_lon = 50,
-     			distance_lat = 5,
-     			distance_legend = 10,
-     			dist_unit = "km",
-     			orientation = FALSE,
-     			legend_size = 4,
-     			legend_colour = "white" )
+	      lat = -21.45,
+	      distance_lon = 50,
+	      distance_lat = 5,
+	      distance_legend = 10,
+	      dist_unit = "km",
+	      orientation = FALSE,
+	      legend_size = 4,
+	      legend_colour = "white" )
 
 
 vp2 = viewport( width = 0.32,
